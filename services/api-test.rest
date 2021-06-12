@@ -1,0 +1,52 @@
+
+# ============================================================================ average_speed_24hrs
+# correct
+GET http://localhost:5000/api/v1/average_speed_24hrs?date=2020-10-10
+
+###
+GET http://localhost:5000/api/v1/average_speed_24hrs?date=
+
+###
+# ============================================================================ average_fare_heatmap
+# correct
+GET http://localhost:5000/api/v1/average_fare_heatmap?date=2020-10-10
+
+
+###
+
+GET http://localhost:5000/api/v1/average_fare_heatmap?date=
+
+
+###
+# wrong format
+GET http://localhost:5000/api/v1/average_fare_heatmap?date=23
+
+
+###
+
+# ============================================================================ total_trips
+# end date less than start date
+GET http://localhost:5000/api/v1/total_trips?start-date=2020-10-10&end-date=2020-01-12
+
+###
+# correct
+GET http://localhost:5000/api/v1/total_trips?start-date=2020-10-10&end-date=2020-10-11
+
+###
+# incorrect args
+GET http://localhost:5000/api/v1/total_trips?date=2020-10-10
+
+###
+# incorrect args
+GET http://localhost:5000/api/v1/total_trips?date=
+
+###
+GET http://localhost:5000/api/v1/work
+
+###
+GET http://localhost:5000/api/v1/spark
+
+###
+GET http://localhost:5000/hello
+
+
