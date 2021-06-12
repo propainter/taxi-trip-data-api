@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    container_name: web
+    image: web
+    build:
+      context: ./services/web
+      dockerfile: Dockerfile
+    volumes:
+      - './services/web/project:/usr/src/app'
+    ports:
+      - 5009:5000
+    command: python manager.py 
+    environment:
+      - APP_SETTINGS=server.config.DevelopmentConfig
+    links:
+      - redis
+    depends_on:
+      - redis
+  redis:
+    image: redis
